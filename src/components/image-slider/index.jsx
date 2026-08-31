@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from 'react-icons/bs'
 
 export default function ImageSlider({url, page = 1, limit = 5}){
 
@@ -41,6 +41,16 @@ export default function ImageSlider({url, page = 1, limit = 5}){
     }
 
     return <div className="container">
-
+    <BsArrowLeftCircleFill className="arrow arrow-left"/> 
+    {
+        images && images.length ? 
+        images.map((imagesItem)=>{
+            <img
+            key={imagesItem.id} 
+            src=""
+            alt="" />
+        })
+        : null
+    }
     </div>
 }
