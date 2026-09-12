@@ -1,7 +1,9 @@
-import MenuList from './menu-list'
+import MenuList from "./menu-list";
 
-export default function TreeView({menus=[]}){
-    return <div className="tree-view-components">
+const TreeView = ({menus=[]}) => {
+    return <div>
         <MenuList list={menus}/>
     </div>
 }
+
+export default TreeView;

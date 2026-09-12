@@ -1,6 +1,6 @@
-import MenuItem from "./menu-item";
+import MenuItem from './menu-item'
 
-export default function MenuList({list=[]}){
+const MenuList = ({list=[]}) => {
     return <ul>
         {
             list && list.length ?
@@ -9,3 +9,5 @@ export default function MenuList({list=[]}){
         }
     </ul>
 }
+
+export default MenuList;
