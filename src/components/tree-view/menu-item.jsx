@@ -6,10 +6,10 @@ const MenuItem = ({item}) => {
     const [displayCurrentChildren, setDisplayCurrentChildren] = useState({})
 
     const handleToggleChildren = (getCurrentLabel) =>{
-        setDisplayCurrentChildren({
-            ...displayCurrentChildren,
+        setDisplayCurrentChildren(prev => ({
+            ...prev,
             [getCurrentLabel]:!displayCurrentChildren[getCurrentLabel]
-        })
+        }))
     }
 
     return <li>

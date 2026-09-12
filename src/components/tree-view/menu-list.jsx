@@ -4,7 +4,7 @@ const MenuList = ({list=[]}) => {
     return <ul>
         {
             list && list.length ?
-            list.map(listItem=> <MenuItem item={listItem}/>)
+            list.map((listItem, index)=> <MenuItem key={index} item={listItem}/>)
             : null
         }
     </ul>
