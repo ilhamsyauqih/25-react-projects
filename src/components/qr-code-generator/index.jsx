@@ -1,31 +1,31 @@
 import { useState } from "react";
 import QRCode from "react-qr-code";
 
-export default function QRCodeGenerator(){
+const QRCodeGenerator = () => {
 
-    const [qrCode, setQrCode] = useState('')
-    const [input, setInput] = useState('')
+    const [qrCode, setQrCode] = useState('');
+    const [input, setInput] = useState('');
 
-    const handleGenerateQrCode = () => {
-        setQrCode(input)
+    const handleSetInput = () => {
+        setQrCode(input);
         setInput('')
     }
 
-    return (<div>
-            <h1>QR Code Generator</h1>
-            <div>
-                <input onChange={(e)=> setInput(e.target.value)} type="text" value={input} name="qr-code" placeholder="Enter your value here"/>
-                <button 
-                disabled={input && input.trim() !== "" ? false : true}
-                onClick={handleGenerateQrCode}>Generate</button>
-            </div>
-            <div>
-                <QRCode 
-                id="qr-code-value"
-                value={qrCode}
-                size={400}
-                bgcolor="#fff"
-                />
-            </div>
-    </div>)
+    return <div>
+        <div>
+        <h1>QR Code Generator</h1>
+        <input onChange={(e)=>setInput(e.target.value)} type="text" value={input} name="qr-code"/>
+        <button onClick={handleSetInput}>Generate</button>
+    </div>
+    <div>
+        <QRCode 
+        id="qr-code-value"
+        value={qrCode}
+        size={400}
+        color="#fff"
+        />
+    </div>
+    </div>
 }
+
+export default QRCodeGenerator;
